@@ -35,6 +35,7 @@ El proyecto está organizado en diferentes paquetes para mantener una separació
 
 ## Estructura de directorios
 
+```text
 CajeroAutomaticoV2/
 │
 ├── src/
@@ -49,6 +50,7 @@ CajeroAutomaticoV2/
 │
 ├── .gitignore
 └── CajeroAutomaticoV2.iml
+```
 
 ### Organización de clases
 
