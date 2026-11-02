@@ -33,6 +33,23 @@ El proyecto está organizado en diferentes paquetes para mantener una separació
 | `Controllers` | Control del flujo de ejecución y coordinación de las operaciones. |
 | `Repository` | Administración de las cuentas y persistencia de datos. |
 
+## Estructura de directorios
+
+CajeroAutomaticoV2/
+│
+├── src/
+│   ├── Controllers/
+│   ├── Models/
+│   ├── Repository/
+│   ├── Views/
+│   └── Main.java
+│
+├── data/
+│   └── ListaUsuarios.txt
+│
+├── .gitignore
+└── CajeroAutomaticoV2.iml
+
 ### Organización de clases
 
 - `CuentaBancariaModel`: contiene los atributos de cada cuenta, como nombre, contraseña y saldo. También implementa las operaciones de depósito, retiro y validación de contraseña.
