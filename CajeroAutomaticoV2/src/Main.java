@@ -4,6 +4,6 @@ public class Main {
     public static void main()
     {
         BancoController controller = new BancoController();
-        controller.inicar();
+        controller.iniciar();
     }
 }

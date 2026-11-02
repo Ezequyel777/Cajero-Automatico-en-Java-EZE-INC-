@@ -2,42 +2,78 @@ package Models;
 
 public class CuentaBancariaModel {
 
-    private String nombreUsuario;
-    private String contrasenaUsuario;
+    private String nombre;
+    private String contrasena;
     private double saldo;
+
+    public CuentaBancariaModel() {}
 
     public CuentaBancariaModel(String nombre, String contrasena, double saldo)
     {
-        this.nombreUsuario = nombre;
-        this.contrasenaUsuario = contrasena;
+        this.nombre = nombre;
+        this.contrasena = contrasena;
         this.saldo = saldo;
     }
 
-    public String getNombreUsuario() { return nombreUsuario; }
-    public String getContrasenaUsuario() {return contrasenaUsuario; }
-    public double getSaldo() { return saldo; }
-
-    public boolean depositar(double cantidad)
+    public String getNombre()
     {
-        if(cantidad <= 0) return false;
+        return nombre;
+    }
 
-        this.saldo += cantidad;
+    public boolean setNombre(String name)
+    {
+        if (name == null || name.isBlank()) return false;
+        this.nombre = name;
+        return true;
+    }
+
+    public String getContrasena()
+    {
+        return contrasena;
+    }
+
+    public boolean setContrasena(String password)
+    {
+        if (password == null || password.isBlank()) return false;
+        this.contrasena = password;
+        return true;
+    }
+
+    public double getSaldo()
+    {
+        return saldo;
+    }
+
+    public boolean setSaldo(double amount)
+    {
+        if(amount < 0 || !Double.isFinite(amount)) return false;
+
+        this.saldo = amount;
 
         return true;
     }
 
-    public boolean retirar(double cantidad)
+    public boolean depositar(double amount)
     {
-        if (cantidad <= 0 || cantidad > this.saldo) return false;
+        if(amount < 0 || !Double.isFinite(amount)) return false;
 
-        this.saldo -= cantidad;
+        this.saldo += amount;
 
         return true;
     }
 
-    public boolean validarPassword(String passwordIngresada)
+    public boolean retirar(double amount)
     {
-        return this.contrasenaUsuario != null && this.contrasenaUsuario.equals(passwordIngresada);
+        if (amount < 0 || !Double.isFinite(amount) || amount > this.saldo) return false;
+
+        this.saldo -= amount;
+
+        return true;
+    }
+
+    public boolean validarPassword(String passwordEntered)
+    {
+        return this.contrasena != null && this.contrasena.equals(passwordEntered);
     }
 }
 
